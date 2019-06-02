@@ -3,13 +3,13 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({   
   total_balance: {
     fontSize: 20,
-    backgroundColor: `rgba(255, 255, 255, 1)`,
+    // backgroundColor: `rgba(255, 255, 255, 1)`,
     textAlign: 'center',
-    marginTop: 55,
+    marginTop: 75,
   },
   balance: {
     fontSize: 30,
-    backgroundColor: `rgba(255, 255, 255, 1)`,
+    // backgroundColor: `rgba(255, 255, 255, 1)`,
     margin: 15,
     fontWeight: `bold`,
     textAlign: 'center',
@@ -62,7 +62,20 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   fab: {
-    position: 'absolute', left: 0, right: 0, bottom: 150
+    position: 'absolute', left: 0, right: 0, bottom: 70
+  },
+  user_icon: {
+    position: 'absolute',
+    top: 50,
+    right: 20
+    // right: 0,
+    // flex: 1,
+    // justifyContent: 'flex-end'
+  },
+  bell_icon: {
+    position: 'absolute',
+    top: 50,
+    right: 60
   }
 });
 export { styles }

@@ -3,8 +3,9 @@ import {View, Stylesheet,Text,Image,ScrollView} from 'react-native';
 import {styles} from '../assets/styles'
 import CardView from 'react-native-cardview';
 import ActionButton from 'react-native-action-button';
-import Icon from 'react-native-vector-icons/Ionicons';
+import LinearGradient from 'react-native-linear-gradient';
 import Modal from '../components/modal';
+import { Icon } from 'react-native-elements'
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -12,17 +13,30 @@ export default class Home extends Component {
       isOpen: false
     }
   }
+  static navigationOptions = {
+    header: null
+}
   onClick = () => {
-    this.isOpen = !this.isOpen
-    // if (this.isOpen == true)
-    this.modal.openModal() // do stuff
-    // else {
-    //   this.modal.closeModal()
-    // }
+    this.modal.openModal()
   }
   render () {
     return (
-      <View style={styles.container}>
+      
+      <LinearGradient colors={['#f7f7f7', '#e8f8ff', '#c9edff']} style={styles.container}>
+<View flexDirection="row">
+<View style={{flex:1,alignItems:"flex-end"}}>
+<Icon
+  name='user'
+  type='feather'
+  color='black'
+  containerStyle ={styles.user_icon} />
+  <Icon
+  name='bell'
+  type='feather'
+  color='black'
+  containerStyle ={styles.bell_icon} />
+  </View>
+  </View>
       <ScrollView>
         <Text style={styles.total_balance}>{`Total Balance`}</Text>
         <Text style={styles.balance}>{`$ 100`}</Text>
@@ -93,14 +107,13 @@ export default class Home extends Component {
           </CardView>
         </View>
         </ScrollView>
-        <View style={styles.fab}>
           <Modal onRef={ref=>(this.modal=ref)}></Modal>
           <ActionButton
-          buttonColor="rgba(224,194,60,1)"
+          buttonColor="#607df2"
           onPress={() => { this.onClick()}}
           />
-        </View>
-      </View>
+        </LinearGradient>
+
     )
   }
 }
