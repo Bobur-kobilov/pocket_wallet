@@ -6,10 +6,7 @@ import {
   Text,
   StyleSheet,
   View,
-  Dimensions,
 } from 'react-native';
-
-var screen = Dimensions.get('window');
 
 export default class PopModal extends Component {
 
@@ -24,9 +21,6 @@ export default class PopModal extends Component {
   openModal() {
     this.refs.modal1.open()
   }
-  // closeModal () {
-  //   this.refs.modal1.close()
-  // }
   onClose() {
     console.log('Modal just closed');
   }

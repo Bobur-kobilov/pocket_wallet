@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Stylesheet,Text,Image,ScrollView} from 'react-native';
+import {View,Text,Image,ScrollView,TouchableWithoutFeedback} from 'react-native';
 import {styles} from '../assets/styles'
 import CardView from 'react-native-cardview';
 import ActionButton from 'react-native-action-button';
@@ -19,49 +19,54 @@ export default class Home extends Component {
   onClick = () => {
     this.modal.openModal()
   }
+  navigateToCoinManagement = () =>{
+    this.props.navigation.navigate('CoinManagement')
+  }
   render () {
     return (
       
-      <LinearGradient colors={['#f7f7f7', '#e8f8ff', '#c9edff']} style={styles.container}>
-<View flexDirection="row">
-<View style={{flex:1,alignItems:"flex-end"}}>
-<Icon
-  name='user'
-  type='feather'
-  color='black'
-  containerStyle ={styles.user_icon} />
-  <Icon
-  name='bell'
-  type='feather'
-  color='black'
-  containerStyle ={styles.bell_icon} />
-  </View>
-  </View>
+    <LinearGradient colors={['#f7f7f7','#f4fbff', '#c9edff', '#f7f7f7']} style={styles.container}>
+      <View flexDirection="row">
+        <View style={{flex:1,alignItems:"flex-end"}}>
+        <Icon
+          name='user'
+          type='feather'
+          color='black'
+          containerStyle ={styles.user_icon} />
+          <Icon
+          name='bell'
+          type='feather'
+          color='black'
+          containerStyle ={styles.bell_icon} />
+          </View>
+        </View>
       <ScrollView>
         <Text style={styles.total_balance}>{`Total Balance`}</Text>
         <Text style={styles.balance}>{`$ 100`}</Text>
-        <View flexDirection="row">
-          <CardView
-            cardElevation={2}
-            cardMaxElevation={2}
-            cornerRadius={5}
-            style = {styles.card}
-            >
-            <View flexDirection="row">
-              <View style={{flex:1}}>
-                <Image
-                style={styles.image}
-                source={require('../assets/images/bit_icon.png')}
-                />
+        <TouchableWithoutFeedback onPress={this.navigateToCoinManagement}>
+          <View flexDirection="row">
+            <CardView
+              cardElevation={2}
+              cardMaxElevation={2}
+              cornerRadius={5}
+              style = {styles.card}
+              >
+              <View flexDirection="row">
+                <View style={{flex:1}}>
+                  <Image
+                  style={styles.image}
+                  source={require('../assets/images/bit_icon.png')}
+                  />
+                </View>
+                <View style={{flex:10}}>
+                  <Text style={styles.coin_full_name}>Bitcoin</Text>
+                </View>
               </View>
-              <View style={{flex:10}}>
-                <Text style={styles.coin_full_name}>Bitcoin</Text>
-              </View>
-            </View>
             <Text style={styles.coin_name}>0.0005 BTC</Text>
             <Text style={styles.coin_name}>40 USD</Text>
-          </CardView>
-        </View>
+            </CardView>
+          </View>
+        </TouchableWithoutFeedback>
         <View flexDirection="row">
           <CardView
             cardElevation={2}
