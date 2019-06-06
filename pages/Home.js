@@ -25,7 +25,7 @@ export default class Home extends Component {
   render () {
     return (
       
-    <LinearGradient colors={['#f7f7f7','#f4fbff', '#c9edff', '#f7f7f7']} style={styles.container}>
+    <LinearGradient colors={['#f7f7f7','#f4fbff', '#c9edff', '#f7f7f7']} style={styles.container_home}>
       <View flexDirection="row">
         <View style={{flex:1,alignItems:"flex-end"}}>
         <Icon

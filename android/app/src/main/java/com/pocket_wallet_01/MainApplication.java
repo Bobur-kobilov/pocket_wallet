@@ -3,6 +3,7 @@ package com.pocket_wallet_01;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.swmansion.reanimated.ReanimatedPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.kishanjvaghela.cardview.RNCardViewPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -13,6 +14,8 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 import com.BV.LinearGradient.LinearGradientPackage;
+import com.rt2zz.reactnativecontacts.ReactNativeContacts;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -25,10 +28,12 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReanimatedPackage(),
             new VectorIconsPackage(),
             new RNCardViewPackage(),
             new RNGestureHandlerPackage(),
-            new LinearGradientPackage()
+            new LinearGradientPackage(),
+              new ReactNativeContacts()
       );
     }
 
