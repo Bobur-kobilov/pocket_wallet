@@ -2,13 +2,13 @@ import * as React from 'react';
 import { View, StyleSheet, Dimensions,TouchableWithoutFeedback } from 'react-native';
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
 import ContactList from '../components/Contacts';
-// import styles from '../assets/styles'
+import ManualAddress from '../pages/ManualAddress'
 const FirstRoute = () => (
   <ContactList></ContactList>
 );
 
 const SecondRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#673ab7' }]} />
+ <ManualAddress></ManualAddress>
 );
 
 
